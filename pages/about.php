@@ -1,1 +1,2 @@
 <h1>About Page</h1>
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa ex unde repudiandae ullam suscipit eveniet, eius optio, ducimus illum in, praesentium sed facere dolor atque architecto quidem culpa laborum quas.</p>
