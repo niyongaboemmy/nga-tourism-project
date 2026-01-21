@@ -172,3 +172,17 @@ function filterSelection(category) {
 document.addEventListener('DOMContentLoaded', () => {
     renderCards();
 });
+// --- PRELOADER LOGIC ---
+window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+
+    // Minimal delay so the user actually sees the logo (prevents flickering)
+    setTimeout(() => {
+        preloader.classList.add("preloader-hidden");
+
+        // Remove it from the DOM entirely after the fade-out animation
+        setTimeout(() => {
+            preloader.style.display = "none";
+        }, 500); // Matches the CSS transition time (0.5s)
+    }, 800); // Wait 0.8 seconds before fading out
+});
