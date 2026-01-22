@@ -16,6 +16,7 @@
     // This finds the real path to the 'include' folder, no matter where you are
     include __DIR__ . '/../include/preloader.php';
     ?>
+  <?php include __DIR__ . '/../include/nav.php'; ?>
 
     <header class="landing-hero">
         <div class="hero-bg-zoom"></div>
