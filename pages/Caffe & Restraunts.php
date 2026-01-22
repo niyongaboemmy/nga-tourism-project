@@ -139,11 +139,7 @@
     </style>
 </head>
 <body>
-    <?php
-    // This finds the real path to the 'include' folder, no matter where you are
-    include __DIR__ . '/../include/preloader.php';
-    ?>
-    <?php include __DIR__ . '/../include/nav.php'; ?>
+    
     <section class="hero">
         <a href="pages/Caffe & Restraunts map.php" class="corner-nearby-btn">📍 FIND NEARBY</a>
         <div id="heroSlider"></div>
@@ -180,7 +176,7 @@
         </div>
     </div>
 
-    <?php include __DIR__ . '/../include/footer.php'; ?>
+    
 
     <script>
         const places = [
