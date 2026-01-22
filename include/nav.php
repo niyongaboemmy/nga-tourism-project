@@ -27,7 +27,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="restaurants.php">
+                    <a class="nav-link" href="pages/Caffe & Restraunts.php">
                         <i class="fas fa-utensils"></i> Dining
                     </a>
                 </li>
