@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visit Rwanda - Experience the Remarkable</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- <link rel="stylesheet" href="../assets/css/style.css"> -->
     <link rel="stylesheet" href="../assets/css/historic.css">
 </head>
 
@@ -100,7 +98,7 @@
                     </div>
                 </a>
 
-                <a href="activities.html" class="category-card reveal">
+                <a href="wonders" class="category-card reveal">
                     <div class="cat-img">
                         <img src="https://images.unsplash.com/photo-1676102818778-7dedb5cdad46?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             alt="Nature">
@@ -112,8 +110,8 @@
                         <span class="link-text">See Activities <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </a>
-
-                <a href="transport.html" class="category-card reveal">
+                
+                <a href="transport" class="category-card reveal">
                     <div class="cat-img">
                         <img src="https://images.unsplash.com/photo-1641295437743-2ea0b8453392?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             alt="Transport">
@@ -123,6 +121,18 @@
                         <h3>Transport & Safety</h3>
                         <p>Hospitals, emergency contacts, and how to get around.</p>
                         <span class="link-text">Travel Guide <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="churches" class="category-card reveal">
+                    <div class="cat-img">
+                        <img src="https://images.unsplash.com/photo-1620763935115-3e08804489ca?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Transport">
+                    </div>
+                    <div class="cat-content">
+                        <div class="icon-circle"><i class="fas fa-bus"></i></div>
+                        <h3>Churches</h3>
+                        <p>Find a church to go to on your stay.</p>
+                        <span class="link-text">Churches <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </a>
 

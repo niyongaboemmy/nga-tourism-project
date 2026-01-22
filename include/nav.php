@@ -15,7 +15,7 @@
             <ul class="navbar-nav ms-auto align-items-center">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">
+                    <a class="nav-link" href="./">
                         <i class="fas fa-home"></i> Home
                     </a>
                 </li>
@@ -25,10 +25,25 @@
                         <i class="fas fa-bed"></i> Stays
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="churches">
+                       <i class="fa-solid fa-church"></i> Churches
+                    </a>
+                </li>
 
                 <li class="nav-item">
+<<<<<<< HEAD
                     <a class="nav-link" href="pages/Caffe & Restraunts.php">
+=======
+                    <a class="nav-link" href="restuarants">
+>>>>>>> main
                         <i class="fas fa-utensils"></i> Dining
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="map">
+                        <i class="fa-solid fa-map"></i></i> Map
                     </a>
                 </li>
 
@@ -43,6 +58,10 @@
                         </li>
                         <li><a class="dropdown-item" href="arenas.php"><i class="fas fa-futbol"></i> Arenas & Events</a>
                         </li>
+                        <li class="nav-item">
+                    
+                     <li><a class="dropdown-item" href="wonders"><i class="fa-brands fa-pagelines"></i></i> Wonders</a>
+                </li>
                     </ul>
                 </li>
 
@@ -61,7 +80,7 @@
                 </li>
 
                 <li class="nav-item ms-lg-2">
-                    <a class="btn-book" href="book.php">
+                    <a class="btn-book" href="book">
                         Plan Trip <i class="fas fa-arrow-right"></i>
                     </a>
                 </li>
