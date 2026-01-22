@@ -1,64 +1,95 @@
-<meta charset="UTF-8">
-<title>About | Visit Rwanda</title>
+
 <style>
 body{
 margin:0;
 font-family:Arial, sans-serif;
-background:#000;
+background: #000;
 color:#fff;
-line-height:1.6
 }
-header{
-background:#00A859;
-padding:20px;
-text-align:center
+
+header h1{
+margin:0;
+font-size:1.4rem
+}
+nav a{
+color:#fff;
+text-decoration:none;
+margin-left:20px;
+font-weight:bold
+}
+nav a:hover{
+text-decoration:underline
+}
+.hero{
+padding:60px 20px;
+text-align:center;
+background:#111;
+}
+.hero h2{
+font-size:2.5rem;
+margin-bottom:10px;
+color:#00A859
+}
+.hero p{
+font-size:1.1rem;
+opacity:.9
 }
 section{
 max-width:900px;
-margin:40px auto;
+margin:50px auto;
 padding:0 20px
 }
-h1,h2{
+.card{
+background:lightgray;
+border-left:5px solid #00A859;
+padding:25px;
+margin-bottom:30px
+}
+
+
+.card h3{
+margin-top:0;
 color:#00A859
 }
-footer{
-text-align:center;
-padding:15px;
-background:#111;
-color:#fff;
-position:fixed;
-bottom:0;
-width:100%
-}
-</style>
-</head>
-<body>
 
-<header>
-<h1>About Visit Rwanda</h1>
-</header>
+</style>
+
+
+<div class="hero">
+<h2>Discover Rwanda, One Place at a Time</h2>
+<p>Connecting people to churches, markets, and local culture</p>
+</div>
 
 <section>
-<h2>What We Do</h2>
-<p>
-This website helps users discover places across Rwanda using real-time map data.
-It provides an easy way to explore the best places by viewing their locations directly on an interactive map.
-</p>
 
-<h2>Data Source</h2>
+<div class="card">
+<h3>Our Mission</h3>
 <p>
-All locations are retrieved from OpenStreetMap, a global open-source mapping platform that is continuously updated by contributors worldwide.
+To make exploring Rwanda simple, visual, and accessible by using interesting options
+and open data.
 </p>
+</div>
 
-<h2>Purpose</h2>
+<div class="card">
+<h3>What We Show</h3>
 <p>
-The goal of this project is to make it simple for people to find nearby places, support local businesses,
-and promote digital access to location-based services in Rwanda.
+Cafés and other places across Rwanda, displayed in real time on a clean, easy-to-use map.
 </p>
+</div>
 
-<h2>Technology Used</h2>
+<div class="card">
+<h3>Technology</h3>
 <p>
-HTML, CSS, JavaScript, Leaflet.js, OpenStreetMap, and XAMPP for local development.
+Built using HTML, CSS, JavaScript, Leaflet, OpenStreetMap, and XAMPP for local development.
 </p>
+</div>
+
+<div class="card">
+<h3>Vision</h3>
+<p>
+A digitally connected Rwanda where discovering places is as easy as opening a map.
+</p>
+</div>
+
 </section>
 
