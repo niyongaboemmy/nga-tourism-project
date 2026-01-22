@@ -8,7 +8,7 @@
     <style>
         :root {
             /* Your New Palette */
-            --cream: #E9E5D9;
+            
             --olive: #606C38;
             --dark-forest: #283618;
             --charcoal: #323031;
