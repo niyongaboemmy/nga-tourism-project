@@ -15,7 +15,7 @@
             --bg-controls: rgba(255, 255, 255, 0.95);
             --text-main: #1D1C1C;
             --text-sub: #5D4037;
-            --accent: #606C38;
+            --accent: #00a859;
             --border: #dcd8cc;
             --shadow: 0 10px 20px rgba(96, 108, 56, 0.15);
         }
@@ -27,7 +27,7 @@
             --bg-controls: rgba(29, 28, 28, 0.95);
             --text-main: #e9e5d9;
             --text-sub: #a8a49c;
-            --accent: #606C38;
+            --accent: #00a859;
             --border: rgba(255, 255, 255, 0.05);
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
