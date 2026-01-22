@@ -25,6 +25,11 @@
                         <i class="fas fa-bed"></i> Stays
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="churches">
+                       <i class="fa-solid fa-church"></i> Churches
+                    </a>
+                </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="restuarants">
