@@ -27,28 +27,28 @@ include __DIR__ . '/../include/head.php';
             
             <div class="spotlight-wrapper">
                 <div class="spotlight-card" onclick="openModalById(2)">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/King%27s_Palace%2C_Nyanza%2C_Rwanda.jpg/800px-King%27s_Palace%2C_Nyanza%2C_Rwanda.jpg" class="spotlight-bg">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3dVglEND80F2pSPiGUhR2sWYnDYE3YQI9Qg&s" class="spotlight-bg">
                     <div class="spotlight-overlay">
                         <span class="badge">Cultural Gem</span>
                         <h3>King's Palace Nyanza</h3>
                     </div>
                 </div>
                 <div class="spotlight-card" onclick="openModalById(1)">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Kigali_Genocide_Memorial_Centre.jpg/800px-Kigali_Genocide_Memorial_Centre.jpg" class="spotlight-bg">
+                    <img src="https://i.assetzen.net/i/j6wGs3oQ8F9T/w:1165/h:480/q:70.jpg" class="spotlight-bg">
                     <div class="spotlight-overlay">
                         <span class="badge">Top Rated</span>
                         <h3>Kigali Memorial</h3>
                     </div>
                 </div>
                 <div class="spotlight-card" onclick="openModalById(3)">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Rwanda_National_Museum.jpg/1024px-Rwanda_National_Museum.jpg" class="spotlight-bg">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtVPPx_9JKRP7XUEBektwuKCRBAGnyeGYO5w&s" class="spotlight-bg">
                     <div class="spotlight-overlay">
                         <span class="badge">Best Museum</span>
                         <h3>Ethnographic Museum</h3>
                     </div>
                 </div>
                  <div class="spotlight-card" onclick="openModalById(4)">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Kandt_House_Museum_of_Natural_History.jpg/800px-Kandt_House_Museum_of_Natural_History.jpg" class="spotlight-bg">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw7xCExDEsN-Ux3fUMuhfwYkugmneZDAx7XQ&s" class="spotlight-bg">
                     <div class="spotlight-overlay">
                         <span class="badge">History</span>
                         <h3>Kandt House Museum</h3>
@@ -126,7 +126,7 @@ include __DIR__ . '/../include/head.php';
             desc: "The final resting place for more than 250,000 victims of the Genocide against the Tutsi.",
             hours: "8:00 AM - 4:00 PM (Open Daily)",
             location: "Gisozi, Kigali",
-            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Kigali_Genocide_Memorial_Centre.jpg/800px-Kigali_Genocide_Memorial_Centre.jpg",
+            img: "https://i.assetzen.net/i/j6wGs3oQ8F9T/w:1165/h:480/q:70.jpg",
             lat: -1.9301, lng: 30.0605
         },
         {
