@@ -143,8 +143,8 @@
     // This finds the real path to the 'include' folder, no matter where you are
     include __DIR__ . '/../include/preloader.php';
     ?>
-    <?php require_once 'include/constants.php'; ?>
-    <?php require_once 'include/head.php'; ?>
+    
+    
     <section class="hero">
         <a href="pages/Caffe & Restraunts map.php" class="corner-nearby-btn">📍 FIND NEARBY</a>
         <div id="heroSlider"></div>
