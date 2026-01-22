@@ -21,7 +21,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="homes.php">
+                    <a class="nav-link" href="homes">
                         <i class="fas fa-bed"></i> Stays
                     </a>
                 </li>

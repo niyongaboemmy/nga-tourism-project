@@ -1,92 +1,108 @@
 <div id="preloader">
     <div class="loader-content">
-        <div class="spinner"></div>
-        <div class="loading-text">Visit Rwanda...</div>
+        <div class="pulse-container">
+            <div class="pulse-ring"></div>
+            <div class="pulse-ring delay"></div>
+            <div class="icon-center">
+                <i class="fas fa-map-location-dot"></i>
+            </div>
+        </div>
+        
+        <div class="loading-text">
+            Visit Rwanda
+        </div>
     </div>
 </div>
 
 <style>
-    /* CRITICAL STYLES: Inline ensures this loads immediately */
+    /* 1. The Overlay */
     #preloader {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
         background-color: #ffffff;
         z-index: 999999;
-        /* Higher than everything */
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: opacity 0.5s ease, visibility 0.5s ease;
+        
+        /* THE CRITICAL FADE CSS */
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 1s ease-out, visibility 1s ease-out;
     }
 
+    /* Class to add via JS to trigger fade */
+    #preloader.fade-out {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none; /* Allows user to click through while fading */
+    }
+
+    /* 2. Content Styling */
     .loader-content {
-        text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 15px;
+        gap: 25px;
     }
 
-    .spinner {
-        width: 50px;
-        height: 50px;
-        border: 4px solid #f3f3f3;
-        border-top: 4px solid #00A859;
-        /* Rwanda Green */
-        border-radius: 50%;
-        animation: spin 0.8s linear infinite;
+    /* 3. Pulse Animation */
+    .pulse-container {
+        position: relative;
+        width: 80px; height: 80px;
+        display: flex; justify-content: center; align-items: center;
     }
 
-    .loading-text {
-        font-family: sans-serif;
-        font-weight: 600;
+    .icon-center {
+        font-size: 2rem;
         color: #00A859;
+        z-index: 2;
+        animation: float 2s ease-in-out infinite;
+    }
+
+    .pulse-ring {
+        position: absolute;
+        width: 100%; height: 100%;
+        border-radius: 50%;
+        border: 2px solid #00A859;
+        opacity: 0;
+        animation: ripple 2s linear infinite;
+    }
+    .pulse-ring.delay { animation-delay: 1s; }
+
+    /* 4. Text Styling */
+    .loading-text {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        color: #111;
         text-transform: uppercase;
-        font-size: 0.85rem;
-        letter-spacing: 2px;
-        animation: pulse 1.5s infinite ease-in-out;
+        letter-spacing: 4px;
+        font-size: 0.9rem;
+        animation: fadeText 2s ease-in-out infinite;
     }
 
-    @keyframes spin {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-
-    @keyframes pulse {
-
-        0%,
-        100% {
-            opacity: 1;
-        }
-
-        50% {
-            opacity: 0.5;
-        }
-    }
+    /* --- Keyframes --- */
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+    @keyframes ripple { 0% { transform: scale(0.5); opacity: 0; } 50% { opacity: 0.5; } 100% { transform: scale(1.5); opacity: 0; } }
+    @keyframes fadeText { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
 </style>
 
 <script>
-    // SELF-CONTAINED LOGIC
     window.addEventListener("load", function () {
         const preloader = document.getElementById("preloader");
-
-        // Short delay to ensure branding is seen
+        
+        // 1. Wait a tiny bit (0.5s) so the user actually sees the logo
         setTimeout(() => {
-            preloader.style.opacity = "0";
-            preloader.style.visibility = "hidden"; // Ensures clicks pass through
-
-            // Remove from DOM to free up memory
+            
+            // 2. Add the class that triggers the CSS "transition"
+            preloader.classList.add("fade-out");
+            
+            // 3. Wait for the transition (1000ms) to finish, THEN remove it
             setTimeout(() => {
                 preloader.remove();
-            }, 500);
-        }, 600); // 0.6s delay
+            }, 1000); // Must match the 1s CSS transition time
+            
+        }, 500); 
     });
 </script>
