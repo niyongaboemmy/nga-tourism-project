@@ -3,277 +3,402 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sacred Spaces - Rwanda Tourism</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <title>Sacred Spaces Rwanda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
     <style>
+        /* --- THEME: SACRED GREEN --- */
         :root {
-            --chic-green: #2E7D32;
-            --chic-brown: #795548;
-            --chic-black: #1a1a1a;
-            --chic-white: #ffffff;
-            --chic-gray: #f9f9f9;
+            --sacred-green: #2E7D32;
+            --sacred-dark: #1B5E20;
+            --earth-brown: #5D4037;
+            --white: #ffffff;
+            --bg-light: #f4f7f4;
+            --shadow-card: 0 10px 20px rgba(46, 125, 50, 0.1);
         }
 
         body {
-            font-family: 'Lato', sans-serif;
-            background-color: var(--chic-white);
-            color: var(--chic-black);
-            margin: 0;
-            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-light);
+            color: #333;
+            margin: 0; padding: 0;
+            line-height: 1.6;
         }
 
-        /* Hero Section */
+        /* --- HEADER --- */
         header {
+            background: linear-gradient(rgba(27, 94, 32, 0.8), rgba(46, 125, 50, 0.6)), url('https://images.unsplash.com/photo-1528516304856-74b83038d87a?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
             text-align: center;
-            padding: 80px 20px 40px;
-            max-width: 800px;
-            margin: 0 auto;
+            padding: 120px 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 10px;
-            color: var(--chic-black);
+            font-size: 3.5rem;
+            margin: 0 0 15px 0;
+            letter-spacing: 1px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
-        .subtitle {
-            color: var(--chic-brown);
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+        .subtitle { font-size: 1.2rem; font-weight: 300; opacity: 0.95; max-width: 600px; margin: 0 auto; }
 
-        /* Controls / Filters */
-        .controls {
+        /* --- CONTROLS SECTION --- */
+        .controls-section {
+            background: var(--white);
+            padding: 25px;
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 20px;
-            margin-bottom: 60px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid #E8F5E9;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             flex-wrap: wrap;
         }
 
-        .filter-btn {
-            background: none;
-            border: 1px solid #ddd;
-            padding: 12px 30px;
-            font-family: 'Lato', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        select {
+            padding: 12px 25px;
+            border: 2px solid #eee;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--sacred-dark);
+            font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s ease;
+            outline: none;
+            background: #fff;
+            transition: 0.3s;
+        }
+        
+        select:hover, select:focus { border-color: var(--sacred-green); box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.1); }
+
+        .btn-group { display: flex; gap: 10px; }
+
+        .filter-btn {
+            background: transparent;
+            border: 2px solid var(--sacred-green);
+            color: var(--sacred-green);
+            padding: 10px 30px;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
         }
 
         .filter-btn.active, .filter-btn:hover {
-            border-color: var(--chic-green);
-            background-color: var(--chic-green);
-            color: white;
+            background: var(--sacred-green);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
         }
 
-        /* District Dropdown (Styled) */
-        select.district-select {
-            padding: 12px 20px;
-            border: 1px solid var(--chic-brown);
-            background: white;
-            color: var(--chic-brown);
-            font-family: 'Lato', sans-serif;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        /* Grid Layout */
-        .places-grid {
+        /* --- GRID & CARDS --- */
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 40px;
             max-width: 1200px;
-            margin: 0 auto 100px;
+            margin: 60px auto;
             padding: 0 20px;
         }
 
-        /* The Card */
-        .place-card {
-            background: white;
-            border-bottom: 3px solid transparent;
-            transition: all 0.3s ease;
-        }
-
-        .place-card:hover {
-            transform: translateY(-5px);
-            border-bottom: 3px solid var(--chic-green);
-        }
-
-        .card-image {
-            height: 250px;
-            background-color: #eee;
-            background-size: cover;
-            background-position: center;
+        .card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0,0,0,0.05);
             position: relative;
         }
 
-        .card-details {
-            padding: 25px 0;
+        .card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 20px 40px rgba(46, 125, 50, 0.15); 
         }
 
-        .type-tag {
-            font-size: 0.75rem;
-            color: var(--chic-brown);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+        .img-wrapper { height: 240px; overflow: hidden; position: relative; }
+        
+        .card-img {
+            width: 100%; height: 100%;
+            background-size: cover; background-position: center;
+            transition: transform 0.8s ease;
+        }
+        .card:hover .card-img { transform: scale(1.15); }
+
+        .badge {
+            position: absolute; top: 20px; left: 20px;
+            background: var(--sacred-green); color: white;
+            padding: 6px 14px; border-radius: 30px;
+            font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+
+        .card-body { padding: 30px; }
+        
+        .location-tag { 
+            color: var(--earth-brown); 
+            font-size: 0.75rem; 
+            font-weight: 700; 
+            display: block; 
+            margin-bottom: 10px; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+        }
+        
+        .card-title { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 1.5rem; 
+            margin: 0 0 20px 0; 
+            color: var(--sacred-dark); 
+            line-height: 1.2; 
             font-weight: 700;
         }
 
-        .place-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            margin: 10px 0 5px;
-            color: var(--chic-black);
-        }
-
-        .place-location {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-            display: flex;
+        .maps-btn {
+            display: inline-flex;
             align-items: center;
-            gap: 6px;
+            text-decoration: none; 
+            color: var(--sacred-green);
+            font-weight: 700; 
+            font-size: 0.9rem;
+            transition: 0.3s;
         }
-
-        /* Features List */
-        .features {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .feature-badge {
-            font-size: 0.8rem;
-            padding: 5px 10px;
-            background-color: #f4f4f4;
-            color: #333;
-            border-radius: 4px;
-        }
-
-        .feature-badge.lang {
-            background-color: #e8f5e9; /* Light Green */
-            color: var(--chic-green);
-        }
-
+        
+        .maps-btn span { font-size: 1.2rem; margin-left: 5px; transition: 0.3s; }
+        .maps-btn:hover { color: var(--earth-brown); }
+        .maps-btn:hover span { transform: translateX(5px); }
+        
+        /* Fade Animation */
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .card.show { animation: fadeUp 0.6s ease forwards; }
     </style>
 </head>
 <body>
 
-    <header>
-        <span class="subtitle">Discover Rwanda</span>
-        <h1>Sanctuaries & Spirit</h1>
-        <p>A curated guide to the historic churches and mosques of the Land of a Thousand Hills.</p>
-    </header>
+<header>
+    <h1>Sacred Spaces</h1>
+    <p class="subtitle">A directory of churches and mosques across Rwanda.</p>
+</header>
 
-    <div class="controls">
-        <select class="district-select" onchange="filterDistrict(this.value)">
-            <option value="kigali">Kigali City</option>
-            <option value="rubavu">Rubavu District</option>
-            <option value="musanze">Musanze District</option>
-            <option value="huye">Huye District</option>
-        </select>
+<section class="controls-section">
+    <select id="districtFilter" onchange="applyFilters()">
+        <option value="all">All Regions</option>
+        <option value="kigali">Kigali City</option>
+        <option value="musanze">Musanze (North)</option>
+        <option value="huye">Huye (South)</option>
+        <option value="rubavu">Rubavu (West)</option>
+        <option value="karongi">Karongi (West)</option>
+    </select>
 
-        <button class="filter-btn active" onclick="filterType('all')">All</button>
-        <button class="filter-btn" onclick="filterType('church')">Churches</button>
-        <button class="filter-btn" onclick="filterType('mosque')">Mosques</button>
+    <div class="btn-group">
+        <button class="filter-btn active" id="btn-all" onclick="setType('all')">All</button>
+        <button class="filter-btn" id="btn-church" onclick="setType('church')">Churches</button>
+        <button class="filter-btn" id="btn-mosque" onclick="setType('mosque')">Mosques</button>
+    </div>
+</section>
+
+<div class="grid" id="placesGrid">
+
+    <div class="card church kigali">
+        <div class="img-wrapper">
+            <div class="badge">Catholic</div>
+            <div class="card-img" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e0/Sainte-Famille_Church.jpg')"></div>
+        </div>
+        <div class="card-body">
+            <span class="location-tag">Kigali • Nyarugenge</span>
+            <div class="card-title">Sainte-Famille Church</div>
+            <a href="https://maps.google.com/?q=Sainte-Famille+Church+Kigali" target="_blank" class="maps-btn">View on Map <span>→</span></a>
+        </div>
     </div>
 
-    <div class="places-grid" id="grid">
-       
-        <div class="place-card church kigali">
-            <div class="card-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Kigali_Arena.jpg/800px-Kigali_Arena.jpg')">
-                </div>
-            <div class="card-details">
-                <span class="type-tag">Christian • Pentecostal</span>
-                <h3 class="place-name">Christian Life Assembly</h3>
-                <div class="place-location">📍 Nyarutarama, Kigali</div>
-                <div class="features">
-                    <span class="feature-badge lang">🇬🇧 English Service</span>
-                    <span class="feature-badge">Modern</span>
-                    <span class="feature-badge">Ample Parking</span>
-                </div>
-            </div>
+    <div class="card church kigali">
+        <div class="img-wrapper">
+            <div class="badge">Catholic</div>
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1548544149-4835e62ee5b3?auto=format&fit=crop&w=800&q=80')"></div>
         </div>
-
-        <div class="place-card mosque kigali">
-            <div class="card-image" style="background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/96/34/06/mosque.jpg?w=800&h=600&s=1')"></div>
-            <div class="card-details">
-                <span class="type-tag">Islamic • Sunni</span>
-                <h3 class="place-name">Al-Madina Mosque</h3>
-                <div class="place-location">📍 Nyamirambo, Kigali</div>
-                <div class="features">
-                    <span class="feature-badge lang">🇸🇦 Arabic / 🇷🇼 Kinyarwanda</span>
-                    <span class="feature-badge">Historic Area</span>
-                    <span class="feature-badge">Community Hub</span>
-                </div>
-            </div>
+        <div class="card-body">
+            <span class="location-tag">Kigali • Remera</span>
+            <div class="card-title">Regina Pacis</div>
+            <a href="https://maps.google.com/?q=Regina+Pacis+Catholic+Church+Kigali" target="_blank" class="maps-btn">View on Map <span>→</span></a>
         </div>
-
-        <div class="place-card church kigali">
-            <div class="card-image" style="background-image: url('https://live.staticflickr.com/3910/14420223755_c635390729_b.jpg')"></div>
-            <div class="card-details">
-                <span class="type-tag">Christian • Catholic</span>
-                <h3 class="place-name">St. Michel Cathedral</h3>
-                <div class="place-location">📍 Kiyovu, Kigali</div>
-                <div class="features">
-                    <span class="feature-badge lang">🇫🇷 French / 🇷🇼 Kinyarwanda</span>
-                    <span class="feature-badge">Architectural Landmark</span>
-                </div>
-            </div>
-        </div>
-
-         <div class="place-card church musanze" style="display:none">
-            <div class="card-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/98/Ruhengeri_Cathedral.jpg')"></div>
-            <div class="card-details">
-                <span class="type-tag">Christian • Catholic</span>
-                <h3 class="place-name">Ruhengeri Cathedral</h3>
-                <div class="place-location">📍 Musanze Center</div>
-                <div class="features">
-                    <span class="feature-badge">Historic</span>
-                    <span class="feature-badge">Mass Daily</span>
-                </div>
-            </div>
-        </div>
-
     </div>
 
-    <script>
-        // Simple Filtering Logic
-        function filterType(type) {
-            let cards = document.querySelectorAll('.place-card');
-           
-            // Update active button state
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+    <div class="card church kigali">
+        <div class="img-wrapper">
+            <div class="badge">Anglican</div>
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1473177104440-ffee2f376098?auto=format&fit=crop&w=800&q=80')"></div>
+        </div>
+        <div class="card-body">
+            <span class="location-tag">Kigali • Biryogo</span>
+            <div class="card-title">St. Etienne Cathedral</div>
+            <a href="https://maps.google.com/?q=St+Etienne+Cathedral+Kigali" target="_blank" class="maps-btn">View on Map <span>→</span></a>
+        </div>
+    </div>
 
-            cards.forEach(card => {
-                // We check if the card is currently visible in the district first?
-                // For simplicity, let's just show/hide based on type for now.
-                if (type === 'all' || card.classList.contains(type)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
+    <div class="card mosque kigali">
+        <div class="img-wrapper">
+            <div class="badge">Islam</div>
+            <div class="card-img" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Mosque_in_Kigali%2C_Rwanda.jpg/640px-Mosque_in_Kigali%2C_Rwanda.jpg')"></div>
+        </div>
+        <div class="card-body">
+            <span class="location-tag">Kigali • Nyamirambo</span>
+            <div class="card-title">Al-Madina (Green Mosque)</div>
+            <a href="https://maps.google.com/?q=Green+Mosque+Nyamirambo" target="_blank" class="maps-btn">View on Map <span>→</span></a>
+        </div>
+    </div>
 
-        function filterDistrict(district) {
-            let cards = document.querySelectorAll('.place-card');
-            cards.forEach(card => {
-                if (card.classList.contains(district)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-       
-        // Initialize: Show Kigali Only
-        filterDistrict('kigali');
-    </script>
+    <div class="card mosque kigali">
+        <div class="img-wrapper">
+            <div class="badge">Islam</div>
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1564121211835-e88c852648ab?auto=format&fit=crop&w=800&q=80')"></div>
+        </div>
+        <div class="card-body">
+            <span class="location-tag">Kigali • Nyamirambo</span>
+            <div class="card-title">Masjid Al-Fatah</div>
+            <a href="https://maps.google.com/?q=Masjid+Al+Fatah+Kigali" target="_blank" class="maps-btn">View on Map <span>→</span></a>
+        </div>
+    </div>
+
+    <div class="card church musanze">
+        <div class="img-wrapper">
+            <div class="badge">Catholic</div>
+            <div class="card-img" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e4/Ruhengeri_Cathedral_Front.jpg')"></div>
+        </div>
+        <div class="card-body">
+            <span class="location-tag">Musanze • Center</span>
+            <div class="card-title">Ruhengeri Cathedral</div>
+            <a href="https://maps.google.com/?q=Ruhengeri+Cathedral" target="_blank" class="maps-btn">View on Map <span>→</span></a>
+        </div>
+    </div>
+
+    <div class="card mosque musanze">
+        <div class="img-wrapper">
+            <div class="badge">Islam</div>
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&w=800&q=80')"></div>
+        </div>
+        <div class="card-body">
+            <span class="location-tag">Musanze • Center</span>
+            <div class="card-title">Masjid Musanze</div>
+            <a href="https://maps.google.com/?q=Masjid+Musanze" target="_blank" class="maps-btn">View on Map <span>→</span></a>
+        </div>
+    </div>
+
+    <div class="card church huye">
+        <div class="img-wrapper">
+            <div class="badge">Catholic</div>
+            <div class="card-img" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c5/Butare_Cathedral.jpg')"></div>
+        </div>
+        <div class="card-body">
+            <span class="location-tag">Huye • Butare</span>
+            <div class="card-title">Our Lady of Wisdom</div>
+            <a href="https://maps.google.com/?q=Butare+Cathedral" target="_blank" class="maps-btn">View on Map <span>→</span></a>
+        </div>
+    </div>
+
+    <div class="card mosque huye">
+        <div class="img-wrapper">
+            <div class="badge">Islam</div>
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1596627068595-654bd4439c28?auto=format&fit=crop&w=800&q=80')"></div>
+        </div>
+        <div class="card-body">
+            <span class="location-tag">Huye • Matyazo</span>
+            <div class="card-title">Masjid Matyazo</div>
+            <a href="https://maps.google.com/?q=Masjid+Matyazo+Huye" target="_blank" class="maps-btn">View on Map <span>→</span></a>
+        </div>
+    </div>
+
+    <div class="card church karongi">
+        <div class="img-wrapper">
+            <div class="badge">Catholic</div>
+            <div class="card-img" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Kibuye_Church_Genocide_Memorial.jpg/640px-Kibuye_Church_Genocide_Memorial.jpg')"></div>
+        </div>
+        <div class="card-body">
+            <span class="location-tag">Karongi • Kibuye</span>
+            <div class="card-title">St. Pierre (Saint Jean)</div>
+            <a href="https://maps.google.com/?q=St+Pierre+Church+Kibuye" target="_blank" class="maps-btn">View on Map <span>→</span></a>
+        </div>
+    </div>
+
+    <div class="card church rubavu">
+        <div class="img-wrapper">
+            <div class="badge">Catholic</div>
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1548625361-e88c60eb8307?auto=format&fit=crop&w=800&q=80')"></div>
+        </div>
+        <div class="card-body">
+            <span class="location-tag">Rubavu • Center</span>
+            <div class="card-title">Rubavu Cathedral</div>
+            <a href="https://maps.google.com/?q=Cathedral+Rubavu" target="_blank" class="maps-btn">View on Map <span>→</span></a>
+        </div>
+    </div>
+
+    <div class="card mosque rubavu">
+        <div class="img-wrapper">
+            <div class="badge">Islam</div>
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=800&q=80')"></div>
+        </div>
+        <div class="card-body">
+            <span class="location-tag">Rubavu • Gisenyi</span>
+            <div class="card-title">Masjid al-Jumu'ah</div>
+            <a href="https://maps.google.com/?q=Masjid+Gisenyi" target="_blank" class="maps-btn">View on Map <span>→</span></a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    let currentType = 'all';
+
+    function setType(type) {
+        currentType = type;
+        
+        // 1. Visual Feedback on Buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        document.getElementById('btn-' + type).classList.add('active');
+        
+        // 2. Trigger Filter
+        applyFilters();
+    }
+
+    function applyFilters() {
+        const district = document.getElementById('districtFilter').value;
+        const cards = document.querySelectorAll('.card');
+        
+        // Loop through all cards
+        cards.forEach(card => {
+            // Check if card matches selected District
+            const matchesDistrict = (district === 'all' || card.classList.contains(district));
+            
+            // Check if card matches selected Type (Church/Mosque)
+            const matchesType = (currentType === 'all' || card.classList.contains(currentType));
+
+            // Show or Hide with Animation
+            if (matchesDistrict && matchesType) {
+                card.style.display = 'block';
+                
+                // Restart animation to make it look cool
+                card.classList.remove('show');
+                void card.offsetWidth; // Trigger reflow (magic browser hack)
+                card.classList.add('show');
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // Run on startup
+    document.addEventListener('DOMContentLoaded', applyFilters);
+</script>
+
 </body>
 </html>
