@@ -32,11 +32,7 @@
                 </li>
 
                 <li class="nav-item">
-<<<<<<< HEAD
-                    <a class="nav-link" href="pages/Caffe & Restraunts.php">
-=======
                     <a class="nav-link" href="restuarants">
->>>>>>> main
                         <i class="fas fa-utensils"></i> Dining
                     </a>
                 </li>
@@ -46,11 +42,17 @@
                         <i class="fa-solid fa-map"></i></i> Map
                     </a>
                 </li>
+                <a class="nav-link" href="about">
+                        <i class="fa-regular fa-newspaper"></i></i></i> About us
+                    </a>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                         <i class="fas fa-compass"></i> Discover
                     </a>
+                    <li class="nav-item">
+                    
+                </li>
                     <ul class="dropdown-menu fade-up">
                         <li><a class="dropdown-item" href="historics"><i class="fas fa-landmark"></i> Historics &
                                 Museums</a></li>

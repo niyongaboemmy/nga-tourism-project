@@ -3,7 +3,7 @@
 body{
 margin:0;
 font-family:Arial, sans-serif;
-background: #000;
+background: #ffffff;
 color:#fff;
 }
 
