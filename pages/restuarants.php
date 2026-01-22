@@ -1,48 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visit Rwanda | Discover Kigali</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            /* Your New Palette */
-            
-            --olive: #606C38;
-            --dark-forest: #283618;
-            --charcoal: #323031;
-            --black-matte: #1D1C1C;
-            
-            --primary: var(--olive);
-            --primary-hover: var(--dark-forest);
-            --bg: var(--cream);
-            --text: var(--black-matte);
-            --transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-        }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+    <style>
 
         /* --- HERO SLIDER --- */
-        /* --- HERO SECTION FIX --- */
-.hero { 
-    position: relative; 
-    /* Subtract your nav bar height (assuming ~80px) */
-    height: calc(100vh - 80px); 
-    background: var(--black-matte); 
-    overflow: hidden; 
-    /* Ensure it doesn't have extra top margin */
-    margin-top: 0; 
-}
+        .hero { position: relative; height: 90vh; background: var(--black-matte); overflow: hidden; }
         
         .corner-nearby-btn {
-    position: absolute; 
-    top: 20px; /* Adjusted from 30px */
-    right: 30px; 
-    z-index: 100;
-    /* ... keep other styles ... */
-}
+            position: absolute; top: 30px; right: 30px; z-index: 100;
+            background: var(--olive); color: var(--cream); padding: 12px 24px; border-radius: 50px;
+            text-decoration: none; font-weight: 800; font-size: 0.85rem;
+            display: flex; align-items: center; gap: 8px; transition: var(--transition);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
         .corner-nearby-btn:hover { background: var(--dark-forest); transform: translateY(-3px); }
 
         .slide {
@@ -67,7 +35,7 @@
         .route-trigger:hover { background: var(--dark-forest); transform: scale(1.05); }
 
         /* --- POPULAR SECTION --- */
-        .container { max-width: 1250px; margin: 100px auto; padding: 0 25px; }
+        /* .container { max-width: 1250px; margin: 100px auto; padding: 0 25px; } */
         .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 50px; }
         
         .toggle-btn {
@@ -89,7 +57,7 @@
         .card.reveal { opacity: 1; transform: translateY(0); }
         .card:hover { transform: translateY(-12px); box-shadow: 0 30px 60px rgba(40,54,24,0.15); }
 
-        .card-img { height: 260px; overflow: hidden; }
+        .card-img { height: 260px; overflow: hidden; color: white;}
         .card-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
         .card-info { padding: 25px; background: white; }
         .card-info h3 { font-size: 1.4rem; color: var(--dark-forest); margin-bottom: 5px; }
@@ -146,8 +114,6 @@
 
         @media (max-width: 850px) { .modal-card { flex-direction: column; } .modal-left { min-height: 250px; } }
     </style>
-</head>
-<body>
 
     <section class="hero">
         <a href="pages/Caffe & Restraunts map.php" class="corner-nearby-btn">📍 FIND NEARBY</a>
@@ -158,8 +124,8 @@
     <main class="container">
         <div class="section-header">
             <div>
-                <p style="color: var(--olive); font-weight: 800; letter-spacing: 2px; margin-bottom: 10px;">EXPLORE</p>
-                <h2 style="font-size: 3rem; font-weight: 800; color: var(--dark-forest);">Popular in Kigali</h2>
+                <p style="font-weight: 800; letter-spacing: 2px; margin-bottom: 10px;">EXPLORE</p>
+                <h2 style="font-size: 3rem; font-weight: 800; color: white;">Popular in Kigali</h2>
             </div>
             <button class="toggle-btn" id="toggleBtn" onclick="toggleMore()">Show More</button>
         </div>
@@ -204,8 +170,8 @@
             slider.innerHTML += `
                 <div class="slide ${i===0?'active':''}" style="background-image: url('${p.img}?q=80&w=2000')">
                     <div class="content">
-                        <h1>${p.name}</h1>
-                        <a href="pages/Caffe & Restraunts map.php?target=${encodeURIComponent(p.name)}" class="route-trigger">📍 GET DIRECTIONS</a>
+                        <h1 style= "color: white;">${p.name}</h1>
+                        <a href="pages/Caffe & Restraunts map.php?target=${encodeURIComponent(p.name)}" class="route-trigger" style="color: white;">📍 GET DIRECTIONS</a>
                     </div>
                 </div>`;
             const dot = document.createElement('div');
@@ -267,5 +233,3 @@
 
         function closeModal() { document.getElementById('modalOverlay').classList.remove('active'); }
     </script>
-</body>
-</html>

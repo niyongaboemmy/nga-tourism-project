@@ -33,7 +33,6 @@
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-body);
             color: var(--text-main);
             margin: 0; padding: 0;
