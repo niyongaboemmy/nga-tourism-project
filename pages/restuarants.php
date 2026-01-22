@@ -8,7 +8,7 @@
     <style>
         :root {
             /* Your New Palette */
-            --cream: #E9E5D9;
+            
             --olive: #606C38;
             --dark-forest: #283618;
             --charcoal: #323031;
@@ -25,15 +25,24 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
 
         /* --- HERO SLIDER --- */
-        .hero { position: relative; height: 90vh; background: var(--black-matte); overflow: hidden; }
+        /* --- HERO SECTION FIX --- */
+.hero { 
+    position: relative; 
+    /* Subtract your nav bar height (assuming ~80px) */
+    height: calc(100vh - 80px); 
+    background: var(--black-matte); 
+    overflow: hidden; 
+    /* Ensure it doesn't have extra top margin */
+    margin-top: 0; 
+}
         
         .corner-nearby-btn {
-            position: absolute; top: 30px; right: 30px; z-index: 100;
-            background: var(--olive); color: var(--cream); padding: 12px 24px; border-radius: 50px;
-            text-decoration: none; font-weight: 800; font-size: 0.85rem;
-            display: flex; align-items: center; gap: 8px; transition: var(--transition);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
+    position: absolute; 
+    top: 20px; /* Adjusted from 30px */
+    right: 30px; 
+    z-index: 100;
+    /* ... keep other styles ... */
+}
         .corner-nearby-btn:hover { background: var(--dark-forest); transform: translateY(-3px); }
 
         .slide {
