@@ -144,7 +144,7 @@
     include __DIR__ . '/../include/preloader.php';
     ?>
     
-    
+    <?php include __DIR__ . '/../include/nav.php'; ?>
     <section class="hero">
         <a href="pages/Caffe & Restraunts map.php" class="corner-nearby-btn">📍 FIND NEARBY</a>
         <div id="heroSlider"></div>
@@ -180,6 +180,8 @@
             </div>
         </div>
     </div>
+
+    <?php include __DIR__ . '/../include/footer.php'; ?>
 
     <script>
         const places = [
