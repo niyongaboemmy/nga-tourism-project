@@ -50,21 +50,25 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                         <i class="fas fa-compass"></i> Discover
                     </a>
-                    <li class="nav-item">
-                    
-                </li>
-                    <ul class="dropdown-menu fade-up">
+                     <ul class="dropdown-menu fade-up">
+                      
                         <li><a class="dropdown-item" href="historics"><i class="fas fa-landmark"></i> Historics &
                                 Museums</a></li>
                         <li><a class="dropdown-item" href="parks.php"><i class="fas fa-tree"></i> Parks & Nature</a>
                         </li>
                         <li><a class="dropdown-item" href="arenas.php"><i class="fas fa-futbol"></i> Arenas & Events</a>
                         </li>
-                        <li class="nav-item">
+                         <li><a class="dropdown-item" href="gyms"><i class="fa-solid fa-dumbbell"></i> Gym</a>
+                        </li>
+                          <li class="nav-item">   </li>
                     
                      <li><a class="dropdown-item" href="wonders"><i class="fa-brands fa-pagelines"></i></i> Wonders</a>
                 </li>
                     </ul>
+                    <li class="nav-item">
+                    
+                </li>
+                   
                 </li>
 
                 <li class="nav-item dropdown">
