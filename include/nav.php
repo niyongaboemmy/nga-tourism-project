@@ -15,7 +15,7 @@
             <ul class="navbar-nav ms-auto align-items-center">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">
+                    <a class="nav-link" href="./">
                         <i class="fas fa-home"></i> Home
                     </a>
                 </li>
@@ -23,6 +23,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="homes">
                         <i class="fas fa-bed"></i> Stays
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="churches">
+                       <i class="fa-solid fa-church"></i> Churches
                     </a>
                 </li>
 

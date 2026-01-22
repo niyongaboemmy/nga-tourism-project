@@ -10,7 +10,7 @@
         /* --- THEME ENGINE --- */
         :root {
             /* LIGHT MODE */
-            --bg-body: #e9e5d9;
+            --bg-body: #ececec;
             --bg-card: #ffffff;
             --bg-controls: rgba(255, 255, 255, 0.95);
             --text-main: #1D1C1C;
@@ -33,7 +33,6 @@
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-body);
             color: var(--text-main);
             margin: 0; padding: 0;
