@@ -111,7 +111,11 @@
                         <span class="link-text">See Activities <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </a>
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> main
                 <a href="transport.html" class="category-card reveal">
                     <div class="cat-img">
                         <img src="https://images.unsplash.com/photo-1641295437743-2ea0b8453392?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
