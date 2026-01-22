@@ -27,8 +27,14 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="restaurants.php">
+                    <a class="nav-link" href="restuarants">
                         <i class="fas fa-utensils"></i> Dining
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="map">
+                        <i class="fa-solid fa-map"></i></i> Map
                     </a>
                 </li>
 
@@ -43,6 +49,10 @@
                         </li>
                         <li><a class="dropdown-item" href="arenas.php"><i class="fas fa-futbol"></i> Arenas & Events</a>
                         </li>
+                        <li class="nav-item">
+                    
+                     <li><a class="dropdown-item" href="wonders"><i class="fa-brands fa-pagelines"></i></i> Wonders</a>
+                </li>
                     </ul>
                 </li>
 
@@ -61,7 +71,7 @@
                 </li>
 
                 <li class="nav-item ms-lg-2">
-                    <a class="btn-book" href="book.php">
+                    <a class="btn-book" href="book">
                         Plan Trip <i class="fas fa-arrow-right"></i>
                     </a>
                 </li>

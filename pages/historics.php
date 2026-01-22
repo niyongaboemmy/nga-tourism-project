@@ -1,13 +1,8 @@
-<?php 
-// 1. Include standard head
-include __DIR__ . '/../include/head.php'; 
-?>
 
 <link rel="stylesheet" href="assets/css/historic.css">
 
 <body>
     <?php include __DIR__ . '/../include/preloader.php'; ?>
-    <?php include __DIR__ . '/../include/nav.php'; ?>
 
     <div class="parallax-hero">
         <div class="hero-content reveal">
