@@ -27,11 +27,7 @@
                 </li>
 
                 <li class="nav-item">
-<<<<<<< HEAD
-                    <a class="nav-link" href="pages/Caffe & Restraunts.php">
-=======
                     <a class="nav-link" href="restuarants">
->>>>>>> 64d3a8be7e5bc6f22f8e1fd18a5b5ad67a16d40a
                         <i class="fas fa-utensils"></i> Dining
                     </a>
                 </li>
