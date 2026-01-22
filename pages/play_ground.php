@@ -1,21 +1,266 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rwanda Sports & Play</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
-</head>
-<body>
 
-<nav class="main-nav"> 
-    <div class="nav-container">
-        <div class="logo">RW<span>SPORTS</span></div>
-        <div style="font-weight: 500; color: var(--rw-green);">🇷🇼 Parks, Pitches & Play</div>
-    </div>  
-</nav>
+<style>
 
+/* --- HERO SECTION --- */
+.hero {
+    text-align: center;
+    padding: 5rem 2rem 3rem;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin: 0 0 1rem;
+    font-weight: 800;
+    line-height: 1.1;
+    background: linear-gradient(135deg, var(--rw-green) 0%, var(--rw-blue) 100%);
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-grey);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- FILTERS --- */
+.filter-section {
+    margin: 2.5rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+}
+
+.filter-btn {
+    padding: 0.8rem 1.8rem;
+    border: 2px solid #eee;
+    background: var(--white);
+    color: var(--text-dark);
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--rw-green);
+    color: var(--rw-green);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: var(--rw-green);
+    border-color: var(--rw-green);
+    color: var(--white);
+    box-shadow: 0 8px 20px rgba(32, 96, 61, 0.25);
+}
+
+/* --- GRID --- */
+.parks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem 5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.park-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: all 0.4s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.park-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Rwanda Flag Bar on Card */
+.park-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(
+        90deg,
+        var(--rw-blue) 33%,
+        var(--rw-yellow) 33%,
+        var(--rw-yellow) 66%,
+        var(--rw-green) 66%
+    );
+    z-index: 2;
+}
+
+.park-img-container {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #eee;
+}
+
+.park-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.park-card:hover .park-img-container img {
+    transform: scale(1.1);
+}
+
+.park-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.badge-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+}
+
+.badge.city {
+    background: rgba(0, 161, 222, 0.1);
+    color: var(--rw-blue);
+}
+
+.badge.football {
+    background: rgba(32, 96, 61, 0.1);
+    color: var(--rw-green);
+}
+
+.badge.playground {
+    background: rgba(250, 210, 1, 0.2);
+    color: #b89800;
+}
+
+.park-info h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.4rem;
+    color: var(--text-dark);
+}
+
+.park-info p {
+    color: var(--text-grey);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.btn-visit {
+    background: var(--text-dark);
+    color: var(--white);
+    border: none;
+    padding: 0.9rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.btn-visit:hover {
+    background: var(--rw-green);
+}
+
+/* --- MODAL --- */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 20, 10, 0.6);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    animation: fadeIn 0.3s forwards;
+}
+
+.modal-card {
+    background: var(--white);
+    width: 100%;
+    max-width: 500px;
+    border-radius: 24px;
+    padding: 2.5rem;
+    position: relative;
+    box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+    animation: slideUp 0.4s ease;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: #f0f0f0;
+    border: none;
+    width: 35px; height: 35px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    background: var(--rw-yellow);
+    transform: rotate(90deg);
+}
+
+/* Highlight Tags Style */
+.highlights-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.highlight-tag {
+    background: rgba(32, 96, 61, 0.08);
+    color: var(--rw-green);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(32, 96, 61, 0.1);
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .parks-grid { grid-template-columns: 1fr; }
+    .nav-container { flex-direction: column; gap: 1rem; }
+}
+
+</style>
 <main>
 <header class="hero">
     <h1>Discover <span>Rwanda's</span><br>Best Outdoors</h1>
@@ -272,5 +517,3 @@ window.onclick = e => { if (e.target == modal) closeModal(); }
 window.onload = () => render();
 
 </script>
-</body>
-</html>
