@@ -27,8 +27,13 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="restaurants.php">
+                    <a class="nav-link" href="restuarants">
                         <i class="fas fa-utensils"></i> Dining
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="map">
+                        <i class="fa-solid fa-map"></i></i> Map
                     </a>
                 </li>
 
