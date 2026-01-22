@@ -371,7 +371,7 @@
                 name: "Umuganda Stadium", 
                 type: "football", 
                 city: "Rubavu", 
-                image: "https://images.unsplash.com/photo-1624880357913-a8539238245b?auto=format&fit=crop&w=800&q=80", 
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSeD49LmtbPz2ZfrF1fJZ9CG_zmwRBxhdD6w&s", 
                 short: "Lakeside Football.", 
                 expect: "Scenic stadium near Lake Kivu. Home to Marines FC and Etincelles.",
                 highlights: ["Lake Breeze", "Natural Grass", "Tourist Hub", "Border City", "Weekend Vibes"]
@@ -380,7 +380,7 @@
                 name: "Musanze Stadium", 
                 type: "football", 
                 city: "Musanze", 
-                image: "https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=800&q=80", 
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_Q_VX4L5_bL6cs_-mzrBUuDU0BDQ2NbgJLQ&s", 
                 short: "Ubworoherane Stadium.", 
                 expect: "Home of Musanze FC. Known for its gritty matches and view of volcanoes.",
                 highlights: ["Volcano View", "Passionate Fans", "Natural Grass", "Renovated Stands", "High Altitude"]
@@ -389,7 +389,7 @@
                 name: "Bugesera Stadium", 
                 type: "football", 
                 city: "Nyamata", 
-                image: "https://images.unsplash.com/photo-1518605348400-437731db485a?auto=format&fit=crop&w=800&q=80", 
+                image: "https://www.teradignews.rw/wp-content/uploads/2019/08/ry6b9835-3.jpg", 
                 short: "Bugesera FC's fortress.", 
                 expect: "A tough ground for visitors due to the hot climate of the Eastern Province.",
                 highlights: ["Hot Climate", "Artificial Turf", "New Facility", "Eastern Province", "Developing Area"]
@@ -398,7 +398,7 @@
                 name: "Muhanga Regional Stadium", 
                 type: "football", 
                 city: "Muhanga", 
-                image: "https://images.unsplash.com/photo-1556630820-222a0090885c?auto=format&fit=crop&w=800&q=80", 
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrf5zSMdtrQA0B8irLJAtH-G-PH7twu58OYw&s", 
                 short: "The Central Hub.", 
                 expect: "Home to AS Muhanga. A classic regional stadium with strong community support.",
                 highlights: ["Central Location", "Grass Pitch", "Community Hub", "Historic Venue", "Accessible"]
@@ -407,7 +407,7 @@
                 name: "Nyagatare Stadium", 
                 type: "football", 
                 city: "Nyagatare", 
-                image: "https://images.unsplash.com/photo-1550853965-38b82470989f?auto=format&fit=crop&w=800&q=80", 
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPpsgXHqIBTz3M87AX9tgaq8eXrHcLhwnQ0Q&s", 
                 short: "Sunrise FC Territory.", 
                 expect: "Located in the flat plains of the East. Known for a competitive atmosphere.",
                 highlights: ["Artificial Pitch", "Eastern Plains", "Sunrise FC Home", "Open Air", "Competitive"]
@@ -416,7 +416,7 @@
                 name: "Rusizi Stadium", 
                 type: "football", 
                 city: "Rusizi", 
-                image: "https://images.unsplash.com/photo-1606037388755-66795f7d2426?auto=format&fit=crop&w=800&q=80", 
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2NEWJcfFv-caMpXZj6V4Z9C-vN72Nahg3LA&s", 
                 short: "Western Fortress.", 
                 expect: "Home of Espoir FC. Difficult for visiting teams to get points here.",
                 highlights: ["Border Town", "Tough Atmosphere", "Grass Pitch", "Espoir FC", "Far West"]
@@ -425,7 +425,7 @@
                 name: "Gicumbi Stadium", 
                 type: "football", 
                 city: "Byumba", 
-                image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80", 
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4iLmSQudEmT1cAFRO_tgiFwextoYya1MyXw&s", 
                 short: "High Altitude.", 
                 expect: "Home to Gicumbi FC. Cool weather and scenic hill views.",
                 highlights: ["Very Cold", "Scenic Hills", "Grass Pitch", "Northern Province", "Challenging Terrain"]
