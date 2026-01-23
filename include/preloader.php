@@ -1,168 +1,116 @@
 <div id="preloader">
-    <div class="preloader-wrapper">
-        <div class="logo-animation">
-            <div class="logo-ring"></div>
-            <div class="logo-ring delay"></div>
-            <div class="logo-center">
-                <i class="fas fa-mountain-sun"></i>
-            </div>
-        </div>
-        
-        <div class="reveal-text">
-            <span class="letter">V</span>
-            <span class="letter">I</span>
-            <span class="letter">S</span>
-            <span class="letter">I</span>
-            <span class="letter">T</span>
-            <span class="letter">&nbsp;</span>
-            <span class="letter">R</span>
-            <span class="letter">W</span>
-            <span class="letter">A</span>
-            <span class="letter">N</span>
-            <span class="letter">D</span>
-            <span class="letter">A</span>
-        </div>
-        
-        <div class="loading-bar-container">
-            <div class="loading-progress"></div>
-        </div>
+    <div class="loader-content">
+        <h1 class="loader-text">
+            <span>Visit</span>
+            <span class="stroke-text">Rwanda</span>
+        </h1>
+        <div class="loader-line"></div>
     </div>
 </div>
 
 <style>
+    /* 1. Base Preloader Setup */
     #preloader {
         position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background: #ffffff;
+        inset: 0;
+        background: #1D1C1C; /* Black Matte Background */
         z-index: 9999999;
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: transform 0.8s cubic-bezier(0.85, 0, 0.15, 1), opacity 0.8s ease;
+        /* The exit animation logic */
+        transition: transform 0.8s cubic-bezier(0.76, 0, 0.24, 1);
     }
 
-    /* Transition class for a "shutter" exit */
-    #preloader.exit-animation {
-        transform: translateY(-100%);
-        opacity: 0.9;
+    #preloader.loaded {
+        transform: translateY(-100%); /* Slides up like a curtain */
     }
 
-    .preloader-wrapper {
+    .loader-content {
         text-align: center;
+        position: relative;
+    }
+
+    /* 2. Typography & Animation */
+    .loader-text {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: clamp(3rem, 8vw, 6rem);
+        font-weight: 800;
+        line-height: 1;
+        margin: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 10px;
     }
 
-    /* 1. Logo Pulse Animation */
-    .logo-animation {
+    /* "Visit" is filled white */
+    .loader-text span:first-child {
+        color: white;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeUp 0.8s ease forwards 0.2s;
+    }
+
+    /* "Rwanda" is outlined (Stroke) */
+    .stroke-text {
+        color: transparent;
+        -webkit-text-stroke: 2px #606C38; /* Olive Green Outline */
         position: relative;
-        width: 100px;
-        height: 100px;
-        margin-bottom: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeUp 0.8s ease forwards 0.4s;
     }
 
-    .logo-center {
-        font-size: 3rem;
-        color: #00A859;
-        z-index: 10;
-        animation: logoFloating 2s ease-in-out infinite;
-    }
-
-    .logo-ring {
+    /* "Rwanda" fills with color */
+    .stroke-text::before {
+        content: 'Rwanda';
         position: absolute;
-        width: 100%; height: 100%;
-        border: 2px solid #00A859;
-        border-radius: 50%;
-        opacity: 0;
-        animation: rippleCircle 2s infinite cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    .logo-ring.delay { animation-delay: 1s; }
-
-    /* 2. Letter Reveal Animation */
-    .reveal-text {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 800;
-        font-size: 1.2rem;
-        letter-spacing: 5px;
-        color: #111;
+        top: 0; left: 0;
+        width: 0%; height: 100%;
+        color: #606C38; /* Fill Color */
+        border-right: 4px solid #fff; /* The "Cursor" effect */
         overflow: hidden;
+        animation: fillText 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards 1s;
     }
 
-    .letter {
-        display: inline-block;
-        transform: translateY(100%);
-        opacity: 0;
-        animation: letterRise 0.5s forwards;
-    }
-
-    /* Staggered text timing */
-    .letter:nth-child(1) { animation-delay: 0.1s; }
-    .letter:nth-child(2) { animation-delay: 0.15s; }
-    .letter:nth-child(3) { animation-delay: 0.2s; }
-    .letter:nth-child(4) { animation-delay: 0.25s; }
-    .letter:nth-child(5) { animation-delay: 0.3s; }
-    .letter:nth-child(7) { animation-delay: 0.4s; }
-    .letter:nth-child(8) { animation-delay: 0.45s; }
-    .letter:nth-child(9) { animation-delay: 0.5s; }
-    .letter:nth-child(10) { animation-delay: 0.55s; }
-    .letter:nth-child(11) { animation-delay: 0.6s; }
-    .letter:nth-child(12) { animation-delay: 0.65s; }
-
-    /* 3. Progress Bar */
-    .loading-bar-container {
-        width: 150px;
-        height: 2px;
-        background: #eee;
-        margin-top: 20px;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-
-    .loading-progress {
+    /* 3. Loading Line at Bottom */
+    .loader-line {
         width: 0%;
-        height: 100%;
-        background: #00A859;
-        animation: fillProgress 2.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+        height: 4px;
+        background: white;
+        margin: 30px auto 0;
+        border-radius: 2px;
+        animation: lineGrow 2.2s ease-in-out forwards;
     }
 
     /* KEYFRAMES */
-    @keyframes logoFloating {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
+    @keyframes fadeUp {
+        to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes rippleCircle {
-        0% { transform: scale(0.5); opacity: 0.8; }
-        100% { transform: scale(1.8); opacity: 0; }
-    }
-
-    @keyframes letterRise {
-        to { transform: translateY(0); opacity: 1; }
-    }
-
-    @keyframes fillProgress {
+    @keyframes fillText {
         to { width: 100%; }
+    }
+
+    @keyframes lineGrow {
+        0% { width: 0%; opacity: 0; }
+        50% { opacity: 1; }
+        100% { width: 60%; opacity: 1; }
     }
 </style>
 
 <script>
-    window.addEventListener("load", function() {
-        const preloader = document.getElementById("preloader");
-        
-        // Ensure the progress bar and text animation have time to play (2.5 seconds)
+    window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        // Wait for animations to finish (approx 3s total)
         setTimeout(() => {
-            // Trigger the "Shutter" slide-up exit
-            preloader.classList.add("exit-animation");
+            preloader.classList.add('loaded');
             
-            // Delete the element entirely after the transition
+            // Remove from DOM after slide-up finishes
             setTimeout(() => {
                 preloader.remove();
-            }, 800); 
-        }, 2800); 
+            }, 900);
+        }, 3000);
     });
 </script>

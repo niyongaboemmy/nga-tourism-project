@@ -1,272 +1,258 @@
 <style>
-    .hero {
+:root {
+    --cream: #E9E5D9;
+    --olive: #606C38;
+    --dark-forest: #283618;
+    --charcoal: #323031;
+    --black-matte: #1D1C1C;
+    --white: #ffffff;
+    --transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* --- HERO SECTION --- */
+.hero {
     text-align: center;
-    padding: 5rem 2rem 3rem;
+    padding: 8rem 2rem 4rem;
+    
+    position: relative;
+    /* ADD YOUR IMAGE URL HERE */
+    background: url('https://images.unsplash.com/photo-1687986261123-b17f08f2796c?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+    height: 85vh; 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    margin: 0 0 1rem;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    margin-bottom: 1.5rem;
     font-weight: 800;
     line-height: 1.1;
-    background: linear-gradient(135deg, var(--rw-green) 0%, var(--rw-blue) 100%);
-    -webkit-text-fill-color: transparent;
+    color: var(--dark-forest);
+    /* Entrance Animation */
+    animation: fadeInUp 0.8s ease forwards;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    color: var(--text-grey);
-    max-width: 600px;
+    font-size: 1.1rem;
+    color: var(--charcoal);
+    max-width: 650px;
     margin: 0 auto;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.2s forwards;
 }
 
-/* --- FILTERS --- */
+/* --- PREMIUM FILTERS --- */
 .filter-section {
-    margin: 2.5rem 0;
+    margin: 3rem 0;
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.2rem;
     flex-wrap: wrap;
     padding: 0 1rem;
 }
 
 .filter-btn {
-    padding: 0.8rem 1.8rem;
-    border: 2px solid #eee;
+    padding: 0.9rem 2.2rem;
+    border: 1px solid rgba(40, 54, 24, 0.1);
     background: var(--white);
-    color: var(--text-dark);
+    color: var(--dark-forest);
     border-radius: 50px;
     cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
 }
 
 .filter-btn:hover {
-    border-color: var(--rw-green);
-    color: var(--rw-green);
-    transform: translateY(-2px);
+    background: var(--olive);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(96, 108, 56, 0.2);
 }
 
 .filter-btn.active {
-    background: var(--rw-green);
-    border-color: var(--rw-green);
+    background: var(--dark-forest);
     color: var(--white);
-    box-shadow: 0 8px 20px rgba(32, 96, 61, 0.25);
+    border-color: var(--dark-forest);
+    box-shadow: 0 15px 30px rgba(40, 54, 24, 0.25);
 }
 
-/* --- GRID --- */
+/* --- THE GRID --- */
 .parks-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 2rem;
-    padding: 0 2rem 5rem;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2.5rem;
+    padding: 0 2rem 8rem;
     max-width: 1400px;
     margin: 0 auto;
 }
 
+/* --- PRO PARK CARD --- */
 .park-card {
     background: var(--white);
-    border-radius: 20px;
+    border-radius: 24px;
     overflow: hidden;
-    box-shadow: var(--shadow-card);
-    transition: all 0.4s ease;
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: var(--transition);
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
 .park-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-hover);
-}
-
-/* Rwanda Flag Bar on Card */
-.park-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 6px;
-    background: linear-gradient(
-        90deg,
-        var(--rw-blue) 33%,
-        var(--rw-yellow) 33%,
-        var(--rw-yellow) 66%,
-        var(--rw-green) 66%
-    );
-    z-index: 2;
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(40, 54, 24, 0.12);
 }
 
 .park-img-container {
     width: 100%;
-    height: 220px;
+    height: 260px;
+    position: relative;
     overflow: hidden;
-    background: #eee;
 }
 
 .park-img-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.8s ease;
+    transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .park-card:hover .park-img-container img {
-    transform: scale(1.1);
+    transform: scale(1.15);
+}
+
+/* Floating Badge on Image */
+.park-badge-overlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--olive);
+    z-index: 5;
+    text-transform: uppercase;
 }
 
 .park-info {
-    padding: 1.5rem;
+    padding: 2rem;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 
-.badge-container {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 0.8rem;
-}
-
-.badge {
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 0.3rem 0.8rem;
-    border-radius: 50px;
-    text-transform: uppercase;
-}
-
-.badge.city {
-    background: rgba(0, 161, 222, 0.1);
-    color: var(--rw-blue);
-}
-
-.badge.football {
-    background: rgba(32, 96, 61, 0.1);
-    color: var(--rw-green);
-}
-
-.badge.playground {
-    background: rgba(250, 210, 1, 0.2);
-    color: #b89800;
-}
-
 .park-info h3 {
-    margin: 0 0 0.5rem;
-    font-size: 1.4rem;
-    color: var(--text-dark);
+    margin-bottom: 0.8rem;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--dark-forest);
 }
 
 .park-info p {
-    color: var(--text-grey);
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
     flex-grow: 1;
 }
 
 .btn-visit {
-    background: var(--text-dark);
+    background: var(--dark-forest);
     color: var(--white);
     border: none;
-    padding: 0.9rem;
-    border-radius: 12px;
+    padding: 1.1rem;
+    border-radius: 16px;
     cursor: pointer;
-    font-weight: 600;
-    width: 100%;
-    transition: 0.3s;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: var(--transition);
 }
 
 .btn-visit:hover {
-    background: var(--rw-green);
+    background: var(--olive);
+    transform: scale(1.02);
 }
 
-/* --- MODAL --- */
+/* --- MODAL POLISH --- */
 .modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 20, 10, 0.6);
-    backdrop-filter: blur(8px);
-    z-index: 2000;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    animation: fadeIn 0.3s forwards;
+    background: rgba(29, 28, 28, 0.85);
+    backdrop-filter: blur(15px);
+    z-index: 9999;
 }
 
 .modal-card {
-    background: var(--white);
-    width: 100%;
-    max-width: 500px;
-    border-radius: 24px;
-    padding: 2.5rem;
-    position: relative;
-    box-shadow: 0 25px 80px rgba(0,0,0,0.3);
-    animation: slideUp 0.4s ease;
+    border-radius: 40px;
+    padding: 3.5rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 50px 100px rgba(0,0,0,0.5);
 }
 
 .close-btn {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    background: #f0f0f0;
-    border: none;
-    width: 35px; height: 35px;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: 0.3s;
+    background: #f8f8f8;
+    color: var(--dark-forest);
 }
 
 .close-btn:hover {
-    background: var(--rw-yellow);
-    transform: rotate(90deg);
-}
-
-/* Highlight Tags Style */
-.highlights-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
+    background: var(--olive);
+    color: white;
 }
 
 .highlight-tag {
-    background: rgba(32, 96, 61, 0.08);
-    color: var(--rw-green);
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    border: 1px solid rgba(32, 96, 61, 0.1);
+    background: rgba(96, 108, 56, 0.08);
+    color: var(--olive);
+    border: 1px solid rgba(96, 108, 56, 0.1);
 }
 
-@keyframes fadeIn {
-    to { opacity: 1; }
-}
-
-@keyframes slideUp {
-    from { transform: translateY(40px); opacity: 0; }
+/* --- ANIMATIONS --- */
+@keyframes fadeInUp {
+    from { transform: translateY(30px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
-    .parks-grid { grid-template-columns: 1fr; }
+    .hero { padding: 6rem 1.5rem 3rem; }
+    .hero h1 { font-size: 2.8rem; }
+    .parks-grid { grid-template-columns: 1fr; padding: 0 1.5rem 5rem; }
 }
 </style>
 
-<div id="parks-container" class="parks-grid"></div>
+<header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="content">
+        <span class="pill-badge">Explore the Remarkable</span>
+        <h1>Parks & <span class="highlight">Nature</span></h1>
+        <p>From the mist-covered peaks of the Virungas to the vast savannahs of Akagera, discover the natural soul of Rwanda.</p>
+    </div>
+</header>
+
+<main class="container">
+    <div class="filter-section">
+        <button class="filter-btn active" onclick="filterAction('all', this)">All Nature</button>
+        <button class="filter-btn" onclick="filterAction('National Park', this)">National Parks</button>
+        <button class="filter-btn" onclick="filterAction('Lake', this)">Lakes & Rivers</button>
+        <button class="filter-btn" onclick="filterAction('Wildlife', this)">Wildlife</button>
+    </div>
+
+    <div class="parks-grid" id="parks-container">
+        </div>
 </main>
 
-<div id="park-modal" class="modal-overlay">
-    <div class="modal-card">
-        <button class="close-btn" onclick="closeModal()">&times;</button>
-        <div id="modal-content"></div>
-    </div>
+<div class="modal-overlay" id="park-modal">
+    <div class="modal-card" id="modal-content">
+        </div>
 </div>
-
 <script>
 const data = [
     // PLAYGROUNDS
@@ -480,50 +466,67 @@ const modalContent = document.getElementById('modal-content');
 
 function render(filter='all') {
     container.innerHTML = '';
-    const filtered = filter === 'all' ? data : data.filter(p => p.type===filter);
-    filtered.forEach(item => {
+    const filtered = filter === 'all' ? data : data.filter(p => p.type === filter);
+    
+    filtered.forEach((item, index) => {
         const card = document.createElement('div');
         card.className = 'park-card';
+        // Staggered entrance animation
+        card.style.animation = `fadeInUp 0.6s ease ${index * 0.1}s forwards`;
+        card.style.opacity = '0';
+        
         card.innerHTML = `
             <div class="park-img-container">
+                <span class="park-badge-overlay">${item.type}</span>
                 <img src="${item.image}" alt="${item.name}">
             </div>
             <div class="park-info">
-                <div class="badge-container">
-                    <span class="badge city">📍 ${item.city}</span>
-                    <span class="badge ${item.type}">${item.type.toUpperCase()}</span>
-                </div>
                 <h3>${item.name}</h3>
                 <p>${item.short}</p>
-                <button class="btn-visit" onclick="openDetails('${item.name}')">View Details</button>
+                <div style="display:flex; align-items:center; gap:8px; margin-bottom:1.5rem; font-weight:700; color:var(--olive);">
+                    <i class="fas fa-map-marker-alt"></i> ${item.city}
+                </div>
+                <button class="btn-visit" onclick="openDetails('${item.name}')">Discover More</button>
             </div>
         `;
         container.appendChild(card);
     });
 }
 
+function filterAction(type, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    render(type);
+}
+
 function openDetails(name) {
     const item = data.find(p => p.name === name);
     const tagsHtml = item.highlights ? `<div class="highlights-grid">${item.highlights.map(tag=>`<span class="highlight-tag">${tag}</span>`).join('')}</div>` : '';
+    
     modalContent.innerHTML = `
-        <span class="badge ${item.type}" style="margin-bottom:1rem; display:inline-block;">${item.type.toUpperCase()}</span>
-        <h2 style="margin:0 0 0.5rem 0; color:var(--rw-green);">${item.name}</h2>
-        <p style="color:var(--text-grey); font-weight:500;">📍 ${item.city}</p>
+        <button class="close-btn" onclick="closeModal()">✕</button>
+        <h2 style="font-size:2.5rem; font-weight:800; color:var(--dark-forest); margin-bottom:10px;">${item.name}</h2>
+        <div style="color:var(--olive); font-weight:800; margin-bottom:25px; text-transform:uppercase; letter-spacing:1px;">
+            <i class="fas fa-map-marker-alt"></i> ${item.city} • ${item.type}
+        </div>
         
-        <div style="background:var(--bg-color); padding:1.5rem; border-radius:15px; margin-top:1.5rem; border-left: 4px solid var(--rw-yellow);">
-            <strong>What to expect:</strong>
-            <p style="margin:0.5rem 0 1rem 0; color:var(--text-grey);">${item.expect}</p>
+        <div style="background:var(--cream); padding:2rem; border-radius:24px; margin-top:1.5rem; border-left: 6px solid var(--olive);">
+            <strong style="display:block; margin-bottom:10px; font-size:1.1rem; color:var(--dark-forest);">Experience & Wildlife:</strong>
+            <p style="margin:0 0 1.5rem 0; color:#555; line-height:1.7;">${item.expect}</p>
             ${tagsHtml}
         </div>
-        <button onclick="closeModal()" class="btn-visit" style="margin-top:2rem; background:var(--rw-green)">Close</button>
+        
+        <div style="margin-top:2.5rem; display:flex; gap:15px;">
+            <a href="book.php" class="btn-visit" style="text-decoration:none; text-align:center; flex:1;">Book Trip</a>
+            <button onclick="closeModal()" class="btn-visit" style="background:#f0f0f0; color:var(--dark-forest); flex:1;">Close</button>
+        </div>
     `;
-    modal.style.display = 'flex';
+    modal.classList.add('active');
 }
 
-function closeModal() { modal.style.display = 'none'; }
+function closeModal() { modal.classList.remove('active'); }
 window.onclick = e => { if (e.target == modal) closeModal(); }
 window.onload = () => render();
-
 </script>
 </body>
 </html>

@@ -25,15 +25,14 @@
                         <i class="fas fa-bed"></i> Stays
                     </a>
                 </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="restuarants">
+                        <i class="fas fa-utensils"></i> Dining
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="churches">
                        <i class="fa-solid fa-church"></i> Churches
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="restuarants">
-                        <i class="fas fa-utensils"></i> Dining
                     </a>
                 </li>
                 
@@ -56,7 +55,7 @@
                                 Museums</a></li>
                         <li><a class="dropdown-item" href="parks.php"><i class="fas fa-tree"></i> Parks & Nature</a>
                         </li>
-                        <li><a class="dropdown-item" href="arenas.php"><i class="fas fa-futbol"></i> Arenas & Events</a>
+                        <li><a class="dropdown-item" href="play_ground"><i class="fas fa-futbol"></i> Arenas & Events</a>
                         </li>
                          <li><a class="dropdown-item" href="gyms"><i class="fa-solid fa-dumbbell"></i> Gym</a>
                         </li>
