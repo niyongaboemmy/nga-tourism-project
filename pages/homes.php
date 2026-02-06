@@ -3,6 +3,7 @@
 
 <body>
     <?php include __DIR__ . '/../include/preloader.php'; ?>
+        <?php include __DIR__ . '/../include/nav.php'; ?>
 
     <div class="parallax-hero">
         <div class="hero-overlay"></div>

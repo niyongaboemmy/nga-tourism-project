@@ -41,11 +41,7 @@
                         <i class="fa-solid fa-map"></i></i> Map
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="admin">
-                        </i> Admin
-                    </a>
-                </li>
+              
                 <a class="nav-link" href="about">
                         <i class="fa-regular fa-newspaper"></i></i></i> About us
                     </a>

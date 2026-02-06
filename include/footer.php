@@ -35,6 +35,7 @@
                     <li><a href="contact.html">Contact Support</a></li>
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Terms of Service</a></li>
+                    <li><a href="../pages/admin.php">Admin login</a></li>
                 </ul>
             </div>
 

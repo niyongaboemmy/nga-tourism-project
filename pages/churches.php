@@ -117,7 +117,7 @@
     </style>
 </head>
 <body>
-
+<?php include __DIR__ . '/../include/nav.php'; ?>
 <header>
     <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()">
         <span id="themeIcon">🌙</span> <span id="themeText">Dark Mode</span>
