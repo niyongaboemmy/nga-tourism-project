@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/../include/head.php'; ?>
+
 <style>
     /* --- UNIFIED THEME (Olive & Cream) --- */
     :root {
@@ -135,8 +135,6 @@
     <?php include __DIR__ . '/../include/nav.php'; ?>
 
     <section class="hero">
-        
-
         <div id="heroSlider"></div>
         <div class="dots" id="heroDots"></div>
     </section>

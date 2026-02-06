@@ -4,7 +4,7 @@
     <div class="container">
 
         <a class="navbar-brand" href="index.php">
-            <span class="brand-text">Visit<span class="brand-highlight">Rwanda</span></span>
+            <span class="brand-text">Tem<span class="brand-highlight">bera</span></span>
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
@@ -39,6 +39,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="map">
                         <i class="fa-solid fa-map"></i></i> Map
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin">
+                        </i> Admin
                     </a>
                 </li>
                 <a class="nav-link" href="about">
@@ -85,7 +90,7 @@
                 </li>
 
                 <li class="nav-item ms-lg-2">
-                    <a class="btn-book" href="book">
+                    <a class="btn-book" href="booking">
                         Plan Trip <i class="fas fa-arrow-right"></i>
                     </a>
                 </li>
